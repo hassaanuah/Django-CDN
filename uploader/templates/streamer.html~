@@ -1,0 +1,115 @@
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% load staticfiles %}
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+function deleting(hassaan) {    
+    $.ajax({
+        url: '../list_videos/',
+        method: 'POST',
+        data: {name: hassaan},
+        success: function (data) {
+                alert(data)
+        },
+    });
+}
+</script>
+
+
+
+<style>
+
+
+
+
+
+table, th, td {
+    border-collapse: collapse;
+}
+th {
+    padding: 5px;
+    text-align: center;
+}
+td {
+    padding: 5px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: gray;
+    color: white;
+}
+</style>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">CDN for User</font></a>
+      <a class="navbar-brand" href='../' ><font color="gray">Home</font></a>
+      <a class="navbar-brand navbar-right" href='#' onclick="location.href = '../logout';"><font color="white">Logout</font></a>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+
+<div class="col-lg-5">
+
+
+<div class="row">
+
+<div class="col-lg-1">
+</div>
+
+
+<div class="col-lg-9">
+
+
+
+<div class="table-responsive">
+    {% for img in images %}
+<form >	
+	<div class='row'>
+	<div class="col-md-5">
+	<td><img class="img-responsive" src="data:image/png;base64,{{img.image}}" alt="Red dot" height="200" width="200"/></td>	
+	</div>
+	<div class="col-md-5">
+	<td><font size="4"><b>{{img.Video_Name}}</b></td><br>
+	<td>{{img.Author}}</td><br>
+	<td>{{img.upload_date}}</td><br>
+        <td>
+        </td>
+	<br><br>
+	</div>
+	</div>
+	<br>
+	<br>
+</form>
+    {% endfor %}
+
+</div>
+</div>
+<div class="col-md-1">
+
+<video width="900" controls>
+  <source src="../media/Magiasdfasc.mp4" type="video/mp4">
+  <source src="../media/Magadsfgfaic.mp4" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+
+</div>
+</div>
+</div>

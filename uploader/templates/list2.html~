@@ -1,0 +1,114 @@
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% load staticfiles %}
+
+
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+</style>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">CDN for User</font></a>
+      <a class="navbar-brand" href='../' ><font color="gray">Home</font></a>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+<div class="row">
+
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open(this.src)" class="img-responsive" src="../media/streamingserver.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open(this.src)" class="img-responsive" src="../media/transcoder.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open('http://www.google.com')" class="img-responsive" src="../media/cache.png" >
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open('../list')" class="img-responsive" src="../media/database.jpg" >
+</div>
+
+
+</div>
+
+
+
+<div class="row">
+
+<div class="col-md-1">
+</div>
+
+
+<div class="col-md-7">
+<br>
+<br>
+
+
+<button type="button" onclick="location.href = '../addvideo';" class="btn btn-info">Add Video</button>
+
+<br>
+<br>
+        <div class="table-responsive">
+
+<table style="width:100%" id="t01">
+<thead>
+
+                <tr>
+                  <td class="header"><b> Index </b><i class="icon-sort"></i></td>
+                  <td class="header"><b> File </b><i class="icon-sort"></i></td>
+                  <td class="header"><b> Time </b><i class="icon-sort"></i></td>
+                  <td class="header"><b> Video Name </b><i class="icon-sort"></i></td>
+                  <td class="header"><b> Author </b><i class="icon-sort"></i></td>
+                </tr>
+</thead>
+<tbody>
+    {% for img in images %}
+     <tr>	
+        <td>{{forloop.counter}}</td>
+	<td><a href="{{ img.pic.url }}">{{ img.pic.name }}</a></td>
+	<td>({{img.upload_date}})</td>
+	<td>({{img.Video_Name}})</td>
+	<td>({{img.Author}})</td>
+     </tr>
+    {% endfor %}
+<tbody>
+</table>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,116 @@
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% load staticfiles %}
+
+
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">CDN for User</font></a>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+<div class="row">
+
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open(this.src)" class="img-responsive" src="../media/streamingserver.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open(this.src)" class="img-responsive" src="../media/transcoder.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open('http://www.google.com')" class="img-responsive" src="../media/cache.png" >
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open('../list')" class="img-responsive" src="../media/database.jpg" >
+</div>
+
+
+</div>
+
+
+
+	<div class="col-lg-1">
+	</div>
+	<div class="col-lg-9">
+<br>
+<br>
+    <h1>Video Upload for CDN</h1>
+<br>
+<button type="button" class="btn btn-info">Link</button>
+<br>
+    <form action="#" method="post" enctype="multipart/form-data">
+	{% csrf_token %} 
+	<input type="file" id="pic" name="pic">
+	<input type="text" id="Video_Name" name="Video_Name">
+	<input type="text" id="Author" name="Author">       <!-- {% csrf_token %} {{form}} -->
+<br>
+<br>
+        <input class="btn btn-success" type="submit" value="Upload" />
+    </form>
+
+
+
+        <div class="table-responsive">
+
+<table>
+<thead>
+
+                <tr>
+                  <th class="header"> Index <i class="icon-sort"></i></th>
+		<th> </th>
+                  <th class="header"> File <i class="icon-sort"></i></th>
+                  <th class="header"> Time <i class="icon-sort"></i></th>
+		<th></th>
+                  <th class="header"> Video Name <i class="icon-sort"></i></th>
+                  <th class="header"> Author <i class="icon-sort"></i></th>
+                </tr>
+</thead>
+<tbody>
+    {% for img in images %}
+     <tr>
+	<td>
+        {{forloop.counter}}
+	</td>
+	<td>
+	</td>
+	<td>
+	<a href="{{ img.pic.url }}">{{ img.pic.name }}</a>
+	</td>
+	<td>
+        ({{img.upload_date}})
+	</td>
+	<td>
+	</td>
+	<td>
+        ({{img.Video_Name}})
+	</td>
+	<td>
+        ({{img.Author}})
+	</td>
+	<td>
+        ({{img.file.size}})
+	</td>
+     </tr>
+    {% endfor %}
+<tbody>
+</table>
+</div>
+</div>
+

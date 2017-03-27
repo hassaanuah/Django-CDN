@@ -1,0 +1,62 @@
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% load staticfiles %}
+
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">CDN for User</font></a>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+
+<div class="row">
+<div class="col-md-5">
+</div>
+<body>
+<div class="col-md-4">
+<h1>My Content Network Login Page</h1>
+<br>
+<br>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+
+    <h1>Login For Users</h1>
+<br>
+<br>
+    <form action="/verify/" method="post">
+	{% csrf_token %} 
+	<label>Username : </label>
+	<input type="text" class="form-control" placeholder="Username" id="username" name="username">
+<br>
+        <label>Password :</label>
+	<input type="password" class="form-control" placeholder="Password" id="password" name="password">
+<br>
+
+<br>
+<br>
+        <input class="btn btn-success col-md-5" type="submit" value="Login" />
+
+    </form>
+
+</div>
+</div>
+
+
+

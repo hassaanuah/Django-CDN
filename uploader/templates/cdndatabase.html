@@ -1,0 +1,77 @@
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{% load staticfiles %}
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="white">CDN for User</font></a>
+      <a class="navbar-brand" href='../' ><font color="gray">Home</font></a>
+      <a class="navbar-brand navbar-right" href='#' onclick="location.href = '../logout';"><font color="white">Logout</font></a>
+    </div>
+
+  </div>
+</nav>
+
+<br>
+<br>
+
+<div class="row">
+
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="location.href = '../streamer';" class="img-responsive" src="../media/streamingserver.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open(this.src)" class="img-responsive" src="../media/transcoder.jpg" >
+</div>
+<div class="col-md-1">
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="window.open('http://www.google.com')" class="img-responsive" src="../media/cache.png" >
+</div>
+<div class="col-md-2">
+   <img onmouseover="" style="cursor: pointer;" onclick="location.href = '../list_videos';" class="img-responsive" src="../media/database.jpg" >
+</div>
+
+
+
+
+</div>
+
+{{ user.2 }}
+
+
+<br><br><br>
+<div class="col-md-2">
+<label>Transcoders : {{ user.3 }}</label><br>
+<label>Streaming Server : {{ user.2 }}</label><br>
+<label>Cache : {{ user.0 }}</label><br>
+<label>Database : {{ user.1 }}</label><br>
+</div>
+
+
+
+
+
+<div class="col-md-2">
+<label>Europe : {{ locations.0 }}</label><br>
+<label>Asia : {{ locations.1 }}</label><br>
+<label>Africa : {{ locations.2 }}</label><br>
+<label>America : {{ locations.3 }}</label><br>
+<label>Australia : {{ locations.4 }}</label><br>
+<label>Antarctica : {{ locations.5 }}</label><br>
+</div>
+
+
+
+
+
+
